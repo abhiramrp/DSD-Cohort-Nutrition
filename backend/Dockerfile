@@ -2,6 +2,8 @@ FROM node:21
 
 WORKDIR /app
 
+ENV PORT $PORT
+
 COPY . .
 
 RUN npm install
