@@ -7,6 +7,9 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const database_1 = require("./database");
 const config_1 = require("./config");
+console.log("asdf");
+console.log(config_1.PORT);
+console.log("ASdf");
 database_1.AppDataSource.initialize()
     .then(() => {
     console.log("Data Source has been initialized!");

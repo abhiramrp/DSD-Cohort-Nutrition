@@ -3,9 +3,12 @@ services:
   backend:
     container_name: express-backend
     restart: always
-    build: .
+    build:
+      context: backend
+      dockerfile: Dockerfile
     ports:
-      - ${PORT}:${PORT}
+      - "3000:3000"
+    command: npm run build
     depends_on:
       - db
     volumes:
@@ -15,12 +18,8 @@ services:
     container_name: postgres-database
     image: postgres
     ports:
-      - '5432:${DB_PORT}'
-    volumes:
-      - data:/data/db
+      - "5432:5432"
     environment:
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
-
-volumes: 
-  data: {}
+      - POSTGRES_PASSWORD= password
+      - POSTGRES_USER= postgres
+      - POSTGRES_DB= postgres
