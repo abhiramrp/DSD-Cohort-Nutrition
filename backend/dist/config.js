@@ -26,6 +26,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DB_PASSWORD = exports.DB_USERNAME = exports.DB_NAME = exports.DB_PORT = exports.DB_HOST = exports.PORT = void 0;
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
+console.log("in config");
+console.log(process.env.DB_HOST);
 exports.PORT = Number(process.env.PORT) || 3000;
 exports.DB_HOST = String(process.env.DB_HOST);
 exports.DB_PORT = Number(process.env.DB_PORT);

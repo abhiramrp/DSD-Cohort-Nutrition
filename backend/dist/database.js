@@ -11,6 +11,6 @@ exports.AppDataSource = new typeorm_1.DataSource({
     username: config_1.DB_USERNAME,
     password: config_1.DB_PASSWORD,
     database: config_1.DB_NAME,
-    migrations: [__dirname + "/migration/*.ts"],
+    migrations: ["/migration/*.ts"],
     entities: ["/entity/*.ts"]
 });

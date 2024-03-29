@@ -4,11 +4,6 @@ import cors from "cors";
 import { AppDataSource } from "./database";
 import { PORT } from './config';
 
-console.log("asdf");
-console.log(PORT);
-console.log("ASdf");
-
-
 AppDataSource.initialize()
   .then(() => {
     console.log("Data Source has been initialized!")

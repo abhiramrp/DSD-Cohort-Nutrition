@@ -2,6 +2,9 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
+console.log("in config");
+console.log(process.env.DB_HOST);
+
 export const PORT = Number(process.env.PORT) || 3000;
 
 export const DB_HOST = String(process.env.DB_HOST);

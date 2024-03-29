@@ -2,10 +2,13 @@ version: '3.8'
 services:
   backend:
     container_name: express-backend
+    restart: always
     build:
       context: backend
       dockerfile: Dockerfile
     command: npm run start
+    environment:
+      - POSTGRES_HOST= host.docker.internal
     ports:
       - "3000:3000"
     depends_on:
