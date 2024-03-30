@@ -9,6 +9,7 @@ services:
     command: npm run start
     environment:
       - POSTGRES_HOST= host.docker.internal
+
     ports:
       - "3000:3000"
     depends_on:
@@ -20,8 +21,13 @@ services:
     container_name: postgres-database
     image: postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
+    volumes:
+      - data:/data/db
     environment:
       - POSTGRES_PASSWORD= password
       - POSTGRES_USER= postgres
       - POSTGRES_DB= postgres
+
+volumes: 
+  data: {}
