@@ -19,6 +19,9 @@ app.use((0, cors_1.default)());
 app.get("/", (req, res) => {
     res.send("Express + TypeScript Server");
 });
+app.get("/api", (req, res) => {
+    res.json({ message: "Hello NextJS from Express" });
+});
 app.listen(config_1.PORT, () => {
     console.log(`[server]: Server is running at http://localhost:${config_1.PORT}`);
 });

@@ -1,5 +1,17 @@
 version: '3.8'
 services:
+  frontend:
+    container_name: nextjs-frontend
+    restart: always
+    build: 
+      context: frontend
+      dockerfile: Dockerfile
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+  
   backend:
     container_name: express-backend
     restart: always
@@ -11,7 +23,7 @@ services:
       - POSTGRES_HOST= host.docker.internal
 
     ports:
-      - "3000:3000"
+      - "8080:8080"
     depends_on:
       - db
     volumes:

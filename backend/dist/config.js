@@ -28,7 +28,7 @@ const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 console.log("in config");
 console.log(process.env.DB_HOST);
-exports.PORT = Number(process.env.PORT) || 3000;
+exports.PORT = Number(process.env.PORT) || 8080;
 exports.DB_HOST = String(process.env.DB_HOST);
 exports.DB_PORT = Number(process.env.DB_PORT);
 exports.DB_NAME = String(process.env.DB_NAME);

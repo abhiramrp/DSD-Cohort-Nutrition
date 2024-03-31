@@ -19,6 +19,11 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
 
+app.get("/api", (req: Request, res: Response) => {
+  res.json({message: "Hello NextJS from Express"});
+});
+
+
 app.listen(PORT, () => {
   console.log(`[server]: Server is running at http://localhost:${PORT}`);
 });
