@@ -5,6 +5,8 @@ export default function Home() {
   const [message, setMessage] = useState("Loading")
 
   useEffect(() => {
+
+    // In local machine, this is how it connects to backend. 
     const fetchData = async () => {
       try {
         const response = await fetch("http://localhost:8080/api");
@@ -22,6 +24,7 @@ export default function Home() {
       }
     };
 
+    // When deployed to Vercel, the frontend calls the backend website. 
     const tryVercelFetch = async () => {
       try {
         const altResponse = await fetch("https://dsd-cohort-nutrition-backend.vercel.app/api");

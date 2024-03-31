@@ -14,6 +14,7 @@
   "author": "Abhiram Rishi Prattipati",
   "license": "ISC",
   "dependencies": {
+    "@supabase/supabase-js": "^2.41.1",
     "bcrypt": "^5.1.1",
     "concurrently": "^8.2.2",
     "cors": "^2.8.5",
@@ -40,8 +41,8 @@
     "rimraf": "^5.0.5"
   },
   "pre-commit": [
-		"ts.check",
-		"build",
-		"add-build"
-	]
+    "ts.check",
+    "build",
+    "add-build"
+  ]
 }
