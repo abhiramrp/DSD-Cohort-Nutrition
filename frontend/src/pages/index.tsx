@@ -9,7 +9,7 @@ export default function Home() {
     // In local machine, this is how it connects to backend. 
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api");
+        const response = await fetch("http://localhost:8080/api/users");
         if (!response.ok){
           throw new Error('Local host error');
         }
@@ -17,7 +17,8 @@ export default function Home() {
         const data = await response.json();
         
         console.log(data);
-        setMessage(data.message);
+        setMessage(data);
+      
       } catch (error) {
         console.error("Local Host fetch fail", error);
         tryVercelFetch();
@@ -27,7 +28,7 @@ export default function Home() {
     // When deployed to Vercel, the frontend calls the backend website. 
     const tryVercelFetch = async () => {
       try {
-        const altResponse = await fetch("https://dsd-cohort-nutrition-backend.vercel.app/api");
+        const altResponse = await fetch("https://dsd-cohort-nutrition-backend.vercel.app/api/users");
         if (!altResponse.ok){
           throw new Error('Alt host error');
         }
@@ -49,7 +50,7 @@ export default function Home() {
 
   return (
     <div>
-      {message}
+      {JSON.stringify(message)}
     </div>
     
   )
