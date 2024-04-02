@@ -28,7 +28,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 app.get("/api", (req: Request, res: Response) => {
-  res.json({message: "Hello NextJS from Express"});
+  res.json({message: "Hello NesafxtJS from Express"});
 });
 
 app.get('/api/users', async (req: Request, res: Response) => {
