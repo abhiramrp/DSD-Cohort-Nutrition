@@ -21,24 +21,6 @@ export default function Home() {
       
       } catch (error) {
         console.error("Local Host fetch fail", error);
-        tryVercelFetch();
-      }
-    };
-
-    // When deployed to Vercel, the frontend calls the backend website. 
-    const tryVercelFetch = async () => {
-      try {
-        const altResponse = await fetch("https://dsd-cohort-nutrition-backend.vercel.app/api/users");
-        if (!altResponse.ok){
-          throw new Error('Alt host error');
-        }
-      
-        const data = await altResponse.json();
-        
-        console.log(data);
-        setMessage(data.message);
-      } catch (error) {
-        console.error("Vercel Host fetch fail", error);
       }
     };
 
