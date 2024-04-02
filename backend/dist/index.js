@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
     res.send("Express + TypeScript Server");
 });
 app.get("/api", (req, res) => {
-    res.json({ message: "Hello NextJS from Express" });
+    res.json({ message: "Hello NesafxtJS from Express" });
 });
 app.get('/api/users', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { data, error } = yield supabase_1.supabase.from('User').select();
